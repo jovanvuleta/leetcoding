@@ -12,6 +12,10 @@ class TreeNode:
 class Solution:
     @staticmethod
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        """
+            Time complexity: O(N)
+            Space complexity: O(H) - height of the tree
+        """
         def dfs(left, right):
             if not left and not right:
                 return True
