@@ -34,4 +34,4 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution.stoneGameII(self=Solution, piles=[2,7,9,4,4]))
+    print(Solution.stoneGameII(self=Solution, piles=[2, 7, 9, 4, 4]))
