@@ -3,7 +3,7 @@ class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
         """
             Time complexity: O(m, n) * O(n + m)
-            Space complexity: O(N)
+            Space complexity: O(1)
         """
         len1, len2 = len(str1), len(str2)
 
