@@ -4,7 +4,7 @@ from typing import List
 class Solution:
 
     @staticmethod
-    def compressSecondSolution(self, chars: List[str]) -> int:
+    def compress(self, chars: List[str]) -> int:
         """
             Time complexity: O(N)
             Space complexity: O(1)
