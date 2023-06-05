@@ -4,10 +4,12 @@ from typing import List
 class Solution:
     @staticmethod
     def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
-        i = 0
-
-        x1, y1 = coordinates[i]
-        x2, y2 = coordinates[i + 1]
+        """
+            Time complexity: O(N)
+            Space complexity: O(1)
+        """
+        x1, y1 = coordinates[0]
+        x2, y2 = coordinates[1]
 
         x_diff = x2 - x1
         y_diff = y2 - y1
