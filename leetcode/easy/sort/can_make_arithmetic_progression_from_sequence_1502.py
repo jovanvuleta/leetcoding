@@ -4,6 +4,10 @@ from typing import List
 class Solution:
     @staticmethod
     def canMakeArithmeticProgression(arr: List[int]) -> bool:
+        """
+            Time complexity: O(N log n) - Tim sort
+            Space complexity: O(1)
+        """
         arr.sort()
         diff = arr[1] - arr[0]
 
