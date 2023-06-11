@@ -21,4 +21,4 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution.pivotIndex())
+    print(Solution.pivotIndex(nums=[]))
