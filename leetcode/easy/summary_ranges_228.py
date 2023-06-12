@@ -4,6 +4,10 @@ from typing import List
 class Solution:
     @staticmethod
     def summaryRanges(self, nums: List[int]) -> List[str]:
+        """
+            Time complexity: O(N)
+            Space complexity: O(1)
+        """
         if not nums:
             return []
 
