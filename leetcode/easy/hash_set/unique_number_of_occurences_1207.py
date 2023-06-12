@@ -5,6 +5,10 @@ from typing import List
 class Solution:
     @staticmethod
     def uniqueOccurrences(self, arr: List[int]) -> bool:
+        """
+            Time complexity: O(N)
+            Space complexity: O(N)
+        """
         count = {}
 
         for num in arr:
