@@ -12,8 +12,7 @@ class Solution:
             return []
 
         res = []
-        start = nums[0]
-        end = nums[0]
+        start = end = nums[0]
 
         for i in range(1, len(nums)):
             if nums[i] == end + 1:
@@ -35,4 +34,4 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution.summaryRanges(self=Solution, nums=[0, 2, 3, 4, 6, 8, 9]))
+    print(Solution.summaryRanges(self=Solution, nums=[0, 2, 3, 4, 6, 8, 9, 11]))
