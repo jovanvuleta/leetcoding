@@ -35,4 +35,4 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution.numOfWays(self=Solution, nums=[1]))
+    print(Solution.numOfWays(self=Solution, nums=[3, 4, 5, 1, 2]))
