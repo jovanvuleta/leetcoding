@@ -5,6 +5,10 @@ class Solution:
 
     @staticmethod
     def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:
+        """
+            Time complexity: O(N)
+            Space complexity: O(1)
+        """
         n = len(timeSeries)
         if n == 0:
             return 0
