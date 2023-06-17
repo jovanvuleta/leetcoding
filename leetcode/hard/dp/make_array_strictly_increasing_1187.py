@@ -5,6 +5,10 @@ from typing import List
 class Solution:
     @staticmethod
     def makeArrayIncreasing(self, arr1: List[int], arr2: List[int]) -> int:
+        """
+            Time complexity: O(N * M * log(M))
+            Space complexity: O(M) - len(arr)
+        """
         dp = {-1: 0}
         arr2.sort()
 
