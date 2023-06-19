@@ -1,3 +1,4 @@
+from itertools import accumulate
 from typing import List
 
 
@@ -17,6 +18,10 @@ class Solution:
                 max_alt = curr_alt
 
         return max_alt
+
+    @staticmethod
+    def largestAltitudeSecond(gain: List[int]) -> int:
+        return max(0, max(accumulate(gain)))
 
 
 if __name__ == "__main__":
