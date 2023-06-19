@@ -11,9 +11,10 @@ class ListNode:
 class Solution:
     @staticmethod
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if not head or not head.next:
-            return head
-
+        """
+            Time complexity: O(N)
+            Space complexity: O(1)
+        """
         odd_h = o_curr = head
         even_h = e_curr = head.next
 
