@@ -12,6 +12,10 @@ class Solution:
 
     @staticmethod
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        """
+            Time complexity: O(N)
+            Space complexity: O(1)
+        """
         slow = fast = node = head
         if fast.next is None:
             return None
