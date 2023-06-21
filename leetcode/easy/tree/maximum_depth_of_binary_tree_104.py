@@ -20,7 +20,7 @@ class Solution:
         if not root:
             return 0
 
-        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+        return 1 + max(self.maxDepth(self=Solution, root=root.left), self.maxDepth(self=Solution, root=root.right))
 
     @staticmethod
     def maxDepthIterativeBFS(self, root: Optional[TreeNode]) -> int:
@@ -58,4 +58,14 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution.maxDepth(self=Solution, root=TreeNode()))
+    root = TreeNode(4)
+    left = TreeNode(2)
+    right = TreeNode(6)
+    left1 = TreeNode(1)
+    right1 = TreeNode(3)
+
+    root.left = left
+    root.right = right
+    left.left = left1
+    left.right = right1
+    print(Solution.maxDepth(self=Solution, root=root))
