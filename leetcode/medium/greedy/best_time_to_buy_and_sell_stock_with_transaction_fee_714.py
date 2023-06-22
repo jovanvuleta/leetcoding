@@ -8,10 +8,10 @@ class Solution:
             Time complexity: O(N)
             Space complexity: O(1)
         """
-        buy = float('-inf')
+        buy = -prices[0]
         sell = 0
 
-        for price in prices:
+        for price in prices[1:]:
             buy = max(buy, sell - price)
             sell = max(sell, buy + price - fee)
 
