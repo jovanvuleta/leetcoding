@@ -8,7 +8,7 @@ class Solution:
         """
             Desc: Bit mask is used here to keep track of the collected keys for relevant letter.
             Initially it will be 000.
-            For collected key 'a', if would look like 001.
+            For collected key 'a', it would look like 001.
             For collected 'a' and 'b', it will be like 011.
             'a', 'b', 'c' -> 0111
             Time complexity: O(N * M)
