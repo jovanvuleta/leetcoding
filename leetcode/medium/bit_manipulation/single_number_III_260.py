@@ -14,7 +14,10 @@ class Solution:
         for n in nums:
             xor ^= n
 
-        first_bit = xor & (xor - 1) ^ xor
+        # Get the first rightmost bit
+        # first_bit = xor & (xor - 1) ^ xor
+        first_bit = xor & (-xor)
+
         num1 = 0
         for n in nums:
             if n & first_bit:  # if number contains the first bit of the xor
@@ -25,4 +28,3 @@ class Solution:
 
 if __name__ == "__main__":
     print(Solution.singleNumber(self=Solution, nums=[1, 2, 1, 3, 2, 5]))
-
