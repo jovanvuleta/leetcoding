@@ -13,6 +13,10 @@ class TreeNode:
 class Solution:
     @staticmethod
     def minDepth(self, root: Optional[TreeNode]) -> int:
+        """
+            Time complexity: O(N)
+            Space complexity: O(H) - height of the tree
+        """
         if not root:
             return 0
 
