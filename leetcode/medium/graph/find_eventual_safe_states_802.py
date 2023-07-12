@@ -24,10 +24,10 @@ class Solution:
         res = []
         for i in range(n):
             if dfs(i):
-               res.append(i)
+                res.append(i)
 
         return res
 
 
 if __name__ == "__main__":
-    print(Solution.eventualSafeNodes(self=Solution, graph=[[]]))
+    print(Solution.eventualSafeNodes(self=Solution, graph=[[1, 2], [2, 3], [5], [0], [5], [], []]))
