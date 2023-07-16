@@ -1,9 +1,15 @@
+from functools import lru_cache
 from typing import List
 
 
 class Solution:
     @staticmethod
     def maxValue(self, events: List[List[int]], k: int) -> int:
+        """
+            Intuition: Sort + Binary Search + DP
+            Time complexity: O(N)
+            Space complexity: O(N)
+        """
         # The number of events
         n = len(events)
         # Sort the events in chronological order
