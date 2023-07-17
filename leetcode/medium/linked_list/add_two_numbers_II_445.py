@@ -1,5 +1,7 @@
 # Definition for singly-linked list.
-from typing import Optional, List
+from typing import Optional
+
+from leetcode.easy.linked_list.helpers import build_linked_list
 
 
 class ListNode:
@@ -51,7 +53,7 @@ class Solution:
         """
             Intuition: Reverse both input linked lists, perform addition with a carry, reverse the result linked list.
             Time complexity: O(N)
-            Space complexity: O(N)
+            Space complexity: O(1)
         """
 
         def reverse(node):
@@ -87,26 +89,8 @@ class Solution:
 
         return reverse(dummy_head.next)
 
-    @staticmethod
-    def build_linked_list(l1: List[int]):
-        head = ListNode(l1[0])
-        curr = head
-
-        for val in l1[1:]:
-            curr.next = ListNode(val)
-            curr = curr.next
-
-        return head
-
-    @staticmethod
-    def print_linked_list(node: Optional[ListNode]):
-        while node:
-            print(node.val, end=" -> ")
-            node = node.next
-        print("None")
-
 
 if __name__ == "__main__":
-    l1 = Solution.build_linked_list(l1=[7, 2, 4, 3])
-    l2 = Solution.build_linked_list(l1=[5, 6, 4])
+    l1 = build_linked_list(l1=[7, 2, 4, 3])
+    l2 = build_linked_list(l1=[5, 6, 4])
     print(Solution.addTwoNumbers(self=Solution, l1=l1, l2=l2).val)

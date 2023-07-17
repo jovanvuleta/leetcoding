@@ -1,4 +1,6 @@
-from typing import List, Optional
+from typing import Optional
+
+from leetcode.easy.linked_list.helpers import build_linked_list, print_linked_list
 
 
 # Definition for singly-linked list.
@@ -10,29 +12,12 @@ class ListNode:
 
 class Solution:
     """
-    2. Add two numbers
-        Solution: Iterate over both lists separately and concatenate the int number to a string. Reverse them and then
-        make a linked list from the sum of the reversed numbers.
-        Time complexity: O(N + M) - n,m are the lengths of both given linked lists
-        Space complexity: O(1) - 1 node created - head
+        Time complexity: O(N)
+        Space complexity: O(1)
     """
 
-    def addTwoNumbersSumString(self, l1: ListNode, l2: ListNode) -> ListNode:
-        d = n = ListNode(0)
-        num1 = num2 = ""
-        while l1:
-            num1 += str(l1.val)
-            l1 = l1.next
-        while l2:
-            num2 += str(l2.val)
-            l2 = l2.next
-        res_str = str(int(num1[::-1]) + int(num2[::-1]))[::-1]
-        for i in res_str:
-            d.next = ListNode(int(i))
-            d = d.next
-        return n.next
-
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    @staticmethod
+    def addTwoNumbers(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         head = ListNode()
         current = head
         carry = 0
@@ -47,26 +32,33 @@ class Solution:
             current = current.next
         return head.next
 
+    @staticmethod
+    def addTwoNumbersSumString(l1: ListNode, l2: ListNode) -> ListNode:
+        """
+            Solution: Iterate over both lists separately and concatenate the int number to a string. Reverse them and then
+            make a linked list from the sum of the reversed numbers.
+            Time complexity: O(N + M) - n,m are the lengths of both given linked lists
+            Space complexity: O(1) - 1 node created - head
+        """
+        d = n = ListNode(0)
+        num1 = num2 = ""
+        while l1:
+            num1 += str(l1.val)
+            l1 = l1.next
+        while l2:
+            num2 += str(l2.val)
+            l2 = l2.next
+        res_str = str(int(num1[::-1]) + int(num2[::-1]))[::-1]
+        for i in res_str:
+            d.next = ListNode(int(i))
+            d = d.next
+        return n.next
+
 
 if __name__ == "__main__":
-    a = Solution()
+    l1 = build_linked_list(l1=[3, 4, 2])
+    l2 = build_linked_list(l1=[5, 6, 4])
 
-    s2 = ListNode(3)
-    s1 = ListNode(4, s2)
-    s = ListNode(2, s1)
+    res = Solution.addTwoNumbersSumString(l1=l1, l2=l2)
 
-    # s.next(s1)
-    # s1.next(s3)
-
-    s11 = ListNode(5)
-    s12 = ListNode(6)
-    s13 = ListNode(4)
-
-    s11.next = s12
-    s12.next = s13
-
-    res = a.addTwoNumbersSumString(s, s11)
-
-    while res is not None:
-        print(f"{res.val} -> ")
-        res = res.next
+    print_linked_list(node=res)
