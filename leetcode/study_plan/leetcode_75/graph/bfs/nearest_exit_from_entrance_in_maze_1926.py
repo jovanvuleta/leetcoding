@@ -37,4 +37,8 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution.nearestExit(self=Solution, maze=[], entrance=[]))
+    print(Solution.nearestExit(
+        self=Solution,
+        maze=[["+", "+", ".", "+"], [".", ".", ".", "+"], ["+", "+", "+", "."]],
+        entrance=[1, 2])
+    )
