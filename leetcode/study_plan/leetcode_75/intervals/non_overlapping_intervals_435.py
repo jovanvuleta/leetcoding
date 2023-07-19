@@ -5,7 +5,7 @@ class Solution:
     @staticmethod
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         """
-            Intuition:
+            Intuition: Sorting and then comparing the starts with ends.
             Time complexity: O(N * log(N))
             Space complexity: O(1)
         """
