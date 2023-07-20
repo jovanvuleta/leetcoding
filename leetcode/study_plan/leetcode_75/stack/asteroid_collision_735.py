@@ -9,20 +9,39 @@ class Solution:
             Time complexity: O(N)
             Space complexity: O(N)
         """
-        res = []
-        for asteroid in asteroids:
-            while res and res[-1] > 0 and asteroid < 0:
-                if res[-1] > -asteroid:
+        stack = []
+
+        for roid in asteroids:
+            while stack and stack[-1] > 0 and roid < 0:
+                if stack[-1] > -roid:
                     break
-                elif res[-1] == -asteroid:
-                    res.pop()
+                elif stack[-1] == -roid:
+                    stack.pop()
                     break
-                elif res[-1] < -asteroid:
-                    res.pop()
-                    continue
+                elif stack[-1] < -roid:
+                    stack.pop()
             else:
-                res.append(asteroid)
-        return res
+                stack.append(roid)
+        return stack
+
+    @staticmethod
+    def asteroidCollisionThird(asteroids: List[int]) -> List[int]:
+        stack = []
+
+        for roid in asteroids:
+            while stack and roid < 0 and stack[-1] > 0:
+                if stack[-1] + roid < 0:
+                    stack.pop()
+                elif stack[-1] + roid > 0:
+                    roid = 0
+                else:
+                    roid = 0
+                    stack.pop()
+
+            if roid:
+                stack.append(roid)
+
+        return stack
 
     @staticmethod
     def asteroidCollisionSecond(self, asteroids: List[int]) -> List[int]:
