@@ -8,6 +8,7 @@ class Solution:
             Time complexity: O(N^2 * K) - number of inputs * time per input
             Space complexity: O(N^2 * K)
         """
+
         def dp(cur_k, cur_r, cur_c):
             if (cur_k, cur_r, cur_c) in memo:
                 return memo[(cur_k, cur_r, cur_c)]
@@ -32,7 +33,6 @@ class Solution:
         moves = ((2, 1), (-2, -1), (-2, 1), (2, -1), (1, 2), (-1, -2), (-1, 2), (1, -2))
 
         return dp(0, row, column)
-
 
     @staticmethod
     def knightProbabilitySecond(self, n: int, k: int, row: int, column: int) -> float:
