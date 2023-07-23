@@ -1,9 +1,45 @@
 class Solution:
+
     @staticmethod
     def knightProbability(self, n: int, k: int, row: int, column: int) -> float:
         """
-            Time complexity: O(N^2 * M) - number of inputs * time per input
-            Space complexity: O(N^2 * M)
+            Intuition: Top-down dp approach, where we are starting from the knight starting pos, and calculating the
+            probability positions from there.
+            Time complexity: O(N^2 * K) - number of inputs * time per input
+            Space complexity: O(N^2 * K)
+        """
+        def dp(cur_k, cur_r, cur_c):
+            if (cur_k, cur_r, cur_c) in memo:
+                return memo[(cur_k, cur_r, cur_c)]
+
+            if cur_k == k:
+                return 1
+
+            ans = 0
+
+            for d in moves:
+                new_r = cur_r + d[0]
+                new_c = cur_c + d[1]
+
+                if 0 <= new_r < n and 0 <= new_c < n:
+                    ans += 0.125 * dp(cur_k + 1, new_r, new_c)  # 1 / 8(possible moves by knight) == 0.125
+
+            memo[(cur_k, cur_r, cur_c)] = ans
+
+            return ans
+
+        memo = {}
+        moves = ((2, 1), (-2, -1), (-2, 1), (2, -1), (1, 2), (-1, -2), (-1, 2), (1, -2))
+
+        return dp(0, row, column)
+
+
+    @staticmethod
+    def knightProbabilitySecond(self, n: int, k: int, row: int, column: int) -> float:
+        """
+            Intuition: Bottom-up dp approach, where we are checking all positions in the grid that lead to the start pos
+            Time complexity: O(N^2 * K) - number of inputs * time per input
+            Space complexity: O(N^2 * K)
         """
         knight_moves = [(2, 1), (-2, -1), (-2, 1), (2, -1), (1, 2), (-1, -2), (-1, 2), (1, -2)]
         cache = [[[None] * (k + 1) for _ in range(n)] for _ in range(n)]
