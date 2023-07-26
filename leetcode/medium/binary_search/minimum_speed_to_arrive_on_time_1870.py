@@ -7,7 +7,7 @@ class Solution:
     def minSpeedOnTime(self, dist: List[int], hour: float) -> int:
         """
             Time complexity: O(N * log(U))
-            Space complexity: O(N)
+            Space complexity: O(1)
         """
 
         def can_reach(speed):
