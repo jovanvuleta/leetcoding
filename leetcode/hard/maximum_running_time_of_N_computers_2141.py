@@ -6,7 +6,7 @@ class Solution:
     def maxRunTime(self, n: int, batteries: List[int]) -> int:
         """
             Intuition: Finding the lower and upper bound of the battery range, for binary search usage.
-            Time complexity: O(log(N))
+            Time complexity: O(N * log(N))
             Space complexity: O(1)
         """
 
@@ -15,7 +15,6 @@ class Solution:
 
             for bat in batteries:
                 curr_bat_sum += min(time_span, bat)
-
                 if curr_bat_sum >= target_bat_sum:
                     return True
 
@@ -26,7 +25,6 @@ class Solution:
 
         while l < r:
             m = (l + r) // 2
-
             if can_fit(m):
                 ans = m
                 l = m + 1
