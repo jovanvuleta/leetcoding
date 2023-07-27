@@ -10,7 +10,7 @@ class Solution:
             Space complexity: O(1)
         """
 
-        def can_fit(n, time_span, batteries):
+        def can_fit(time_span):
             target_bat_sum, curr_bat_sum = n * time_span, 0
 
             for bat in batteries:
@@ -27,7 +27,7 @@ class Solution:
         while l < r:
             m = (l + r) // 2
 
-            if can_fit(n, m, batteries):
+            if can_fit(m):
                 ans = m
                 l = m + 1
             else:
@@ -35,7 +35,8 @@ class Solution:
 
         return ans
 
-    def maxRunTimeSecond(self, n: int, batteries: List[int]) -> int:
+    @staticmethod
+    def maxRunTimeSecond(n: int, batteries: List[int]) -> int:
         """
             Intuition: Greedy
             Time complexity: O(N * log(N))
