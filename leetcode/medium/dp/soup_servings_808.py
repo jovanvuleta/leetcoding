@@ -1,6 +1,10 @@
 class Solution:
     @staticmethod
     def soupServings(n: int) -> float:
+        """
+            Time complexity: O(N)
+            Space complexity: O(N)
+        """
         if n > 4800:
             return 1.0
         n = (n + 24) // 25
