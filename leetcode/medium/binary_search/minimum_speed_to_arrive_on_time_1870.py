@@ -12,6 +12,8 @@ class Solution:
 
         def can_reach(speed):
             so_far = 0
+            # Reason for iterating until the last dist is because of this given condition in the question:
+            # There will be at most two digits after the decimal point in hour.
             for d in dist[:-1]:
                 so_far += math.ceil(d / speed)
                 if so_far > hour:
