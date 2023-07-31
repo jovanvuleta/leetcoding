@@ -24,6 +24,4 @@ class Solution:
 
         return dp(n, n)
 
-
-if __name__ == "__main__":
-    print(Solution.soupServings(n=50))
+c
