@@ -2,7 +2,8 @@ from typing import List
 
 
 class Solution:
-    def letterCombinations(self, digits: str) -> List[str]:
+    @staticmethod
+    def letterCombinations(digits: str) -> List[str]:
         """
             Time complexity: O(n * 4^N)
             Space complexity: O(N)
@@ -33,4 +34,4 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution.letterCombinations(self=Solution, digits="23"))
+    print(Solution.letterCombinations(digits="23"))
