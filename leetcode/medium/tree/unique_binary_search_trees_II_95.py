@@ -12,12 +12,12 @@ class TreeNode:
 
 class Solution:
     def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
+        """
+            Time Complexity: O(C(n))
+            Space Complexity: O(n^2)
+        """
         @lru_cache
         def dfs(st, end):
-            """
-                Time Complexity: O(C(n))
-                Space Complexity: O(n^2)
-            """
             if st > end:
                 return [None]
             ans = []
