@@ -8,6 +8,7 @@ class Solution:
             Time complexity: O(N * log(M))
             Space complexity: O(1)
         """
+
         def is_valid(threshold):
             # Greedy
             i, cnt = 0, 0
@@ -25,8 +26,8 @@ class Solution:
             return 0
 
         nums.sort()
-        l, r = 0, 10**9
-        res = 10**9
+        l, r = 0, max(nums) - min(nums)  # upper value of the binary search is bounded by the max - min value diff
+        res = 10 ** 9
 
         while l <= r:
             m = l + (r - l) // 2
@@ -39,4 +40,4 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution.minimizeMax(nums=[], p=2))
+    print(Solution.minimizeMax(nums=[10, 1, 2, 7, 1, 3], p=2))
