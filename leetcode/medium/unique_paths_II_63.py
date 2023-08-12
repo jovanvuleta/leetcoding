@@ -21,7 +21,7 @@ class Solution:
 
         return dp[0]
 
-    def uniquePathsWithObstacles(obstacleGrid: List[List[int]]) -> int:
+    def uniquePathsWithObstaclesSecond(obstacleGrid: List[List[int]]) -> int:
         """
             Intuition: Brute Force
             Time complexity: O(N * M)
