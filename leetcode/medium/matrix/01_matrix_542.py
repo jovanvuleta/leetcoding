@@ -4,6 +4,10 @@ from typing import List
 
 class Solution:
     def updateMatrix(mat: List[List[int]]) -> List[List[int]]:
+        """
+            Time complexity: O(m×n)
+            Space complexity: O(m×n)
+        """
         if not mat or not mat[0]:
             return []
 
