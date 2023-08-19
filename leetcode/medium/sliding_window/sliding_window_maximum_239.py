@@ -5,6 +5,7 @@ from typing import List
 class Solution:
     def maxSlidingWindow(nums: List[int], k: int) -> List[int]:
         """
+            Intuition: Monotonic stack
             Time complexity: O(N)
             Space complexity: O(N)
         """

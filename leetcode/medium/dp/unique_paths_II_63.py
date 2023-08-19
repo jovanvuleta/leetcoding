@@ -31,8 +31,6 @@ class Solution:
         dp = {(M - 1, N - 1): 1}
 
         def dfs(r, c):
-            if (r, c) == (2, 2):
-                print("here")
             if r == M or c == N or obstacleGrid[r][c]:
                 return 0
             if (r, c) in dp:
