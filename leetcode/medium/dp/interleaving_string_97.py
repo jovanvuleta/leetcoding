@@ -1,6 +1,11 @@
 class Solution:
     @staticmethod
     def isInterleave(s1: str, s2: str, s3: str) -> bool:
+        """
+            Intuition: Bottom-up dp approach
+            Time complexity: O(N * M)
+            Space complexity: O(N * M)
+        """
         if len(s1) + len(s2) != len(s3):
             return False
 
