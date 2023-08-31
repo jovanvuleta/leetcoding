@@ -3,6 +3,11 @@ from typing import List
 
 class Solution:
     def minTaps(self, n: int, ranges: List[int]) -> int:
+        """
+            Intuition: DP
+            Time complexity: O(N^2) - For each tap, we potentially update O(N) elements in the DP array.
+            Space complexity: O(N) - dp array storing
+        """
         dp = [float('inf')] * (n + 1)
         dp[0] = 0
 
