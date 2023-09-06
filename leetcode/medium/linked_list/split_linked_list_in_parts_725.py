@@ -13,6 +13,10 @@ class ListNode:
 class Solution:
     @staticmethod
     def splitListToParts(head: Optional[ListNode], k: int) -> List[Optional[ListNode]]:
+        """
+            Time complexity: O(N)
+            Space complexity: O(N)
+        """
         output = []
         cur, n = head, 0
 
@@ -25,7 +29,7 @@ class Solution:
         prev = None
 
         for _ in range(k):
-            output.append(cur.val)
+            output.append(cur)
             for _ in range(part):
                 if cur:
                     prev = cur
