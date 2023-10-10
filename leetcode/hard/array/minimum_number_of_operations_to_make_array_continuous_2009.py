@@ -19,3 +19,7 @@ class Solution:
 
             ans = min(ans, n - (idx - i))
         return ans
+
+
+if __name__ == "__main__":
+    print(Solution.minOperations(self=Solution, nums=[1, 2, 3, 5, 6]))
