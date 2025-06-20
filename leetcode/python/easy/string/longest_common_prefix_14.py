@@ -12,6 +12,26 @@ class Solution:
             res += strs[0][i]
         return res
 
+    def longestCommonPrefix2(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        min_len = float('inf')
+
+        for s in strs:
+            min_len = min(min_len, len(s))
+
+        res = ""
+
+        for i in range(min_len):
+            ch = strs[0][i]
+            for s in strs:
+                if ch != s[i]:
+                    return res
+            res += ch
+        return res
+
     @staticmethod
     def solutionTwo(self, strs: List[str]):
         """
@@ -21,7 +41,7 @@ class Solution:
         prefix = strs[0]
         for i in range(1, len(strs)):
             while not strs[i].startswith(prefix):
-                prefix = prefix[0:-1]
+                prefix = prefix[:-1]
         return prefix
 
 
